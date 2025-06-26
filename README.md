@@ -227,8 +227,8 @@ export default function RootLayout({
       <body>
         <header style={{ padding: '1rem', background: '#eee' }}>
           <nav style={{ display: 'flex', gap: '1rem' }}>
-            <Link href="/">Início</Link>
-            <Link href="/about">Sobre</Link>
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
           </nav>
         </header>
         <main style={{ padding: '2rem' }}>{children}</main>
@@ -253,7 +253,7 @@ export default function RootLayout({
 ### 💡 Teste:
 
 - Acesse `/`
-- Clique em **Sobre** → Vai para `/about`
-- Clique em **Início** → Volta para `/`
+- Clique em **About** → Vai para `/about`
+- Clique em **Home** → Volta para `/`
 
 ---
