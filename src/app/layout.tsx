@@ -15,12 +15,12 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <header className='p-4 bg-blue-600 text-white'>
-          <nav className='flex  gap-2'>
+          <nav className='container mx-auto flex  gap-2'>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
           </nav>
         </header>
-        <main className="flex items-center text-white p-4">{children}</main>
+        <main className="flex-1 py-6"><div className="container mx-auto px-4" >{children}</div></main>
       </body>
     </html>
   )
