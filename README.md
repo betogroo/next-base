@@ -257,3 +257,161 @@ export default function RootLayout({
 - Clique em **Home** → Volta para `/`
 
 ---
+
+# shadcn/ui
+
+## 🚀 Instalação do Tailwind CSS v4 + CLI + PostCSS
+
+1. **Instale Tailwind CSS v3 estável:**
+
+```bash
+npm install -D tailwindcss@3.4.1 postcss autoprefixer
+```
+
+2. **Gere os arquivos de config normalmente:**
+
+```bash
+npx tailwindcss init -p
+```
+
+3. **Mantenha o `postcss.config.js` assim:**
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+4. **Mantenha o `tailwind.config.js` assim:**
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+5. **Mantenha o `global.css` assim:**
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+6. **Mantenha o `app/src/page.tsx` assim:**
+
+```tsx
+export default function Home() {
+  return <h1 className="text-5xl font-bold text-blue-500">Home</h1>
+}
+```
+
+7. **Mantenha o `app/src/about/page.tsx` assim:**
+
+```tsx
+export default function About() {
+  return <h1 className="text-5xl font-bold text-green-500">About</h1>
+}
+```
+
+8. **Mantenha o `app/src/layout.tsx` assim:**
+
+```tsx
+import './globals.css'
+import Link from 'next/link'
+
+export const metadata = {
+  title: 'Meu App',
+  description: 'Aprendendo Next.js com React',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="pt-BR">
+      <body>
+        <header className="p-4 bg-blue-600 text-white">
+          <nav className="flex  gap-2">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+          </nav>
+        </header>
+        <main className="flex items-center text-white p-4">{children}</main>
+      </body>
+    </html>
+  )
+}
+```
+
+9. ** Por fim reinicie o servidor:**
+
+```bash
+npm run dev
+```
+
+---
+
+## ✅ Passo a passo atualizado para o novo `shadcn`
+
+### 1. Rode o comando:
+
+```bash
+npx shadcn@latest init
+```
+
+### 2. Responda às perguntas:
+
+| Pergunta                                 | Sugestão                             |
+| ---------------------------------------- | ------------------------------------ |
+| **Which style**                          | `Default` (ou `New York`, se quiser) |
+| **Where is your global CSS file**        | `src/app/globals.css`                |
+| **Where is your tailwind.config.js**     | `tailwind.config.js`                 |
+| **Where should components be generated** | `components` (padrão)                |
+| **Do you want to use TypeScript?**       | `Yes`                                |
+
+---
+
+### 3. Adicionar um componente (ex: botão)
+
+```bash
+npx shadcn@latest add button
+```
+
+---
+
+### 4. Usar o botão no seu `page.tsx`
+
+```tsx
+import { Button } from '@/components/ui/button'
+
+export default function Home() {
+  return (
+    <section className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-4xl font-bold">Shadcn funcionando! 🎉</h1>
+      <Button variant="default">Clique aqui</Button>
+      <Button variant="destructive">Deletar</Button>
+    </section>
+  )
+}
+```
+
+---
+
+### 5. Rodar o projeto
+
+```bash
+npm run dev
+```
+
+---

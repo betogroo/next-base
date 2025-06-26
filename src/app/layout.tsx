@@ -14,13 +14,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <header style={{ padding: '1rem', background: '#eee' }}>
-          <nav style={{ display: 'flex', gap: '1rem' }}>
+        <header className='p-4 bg-blue-600 text-white'>
+          <nav className='container mx-auto flex  gap-2'>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
           </nav>
         </header>
-        <main style={{ padding: '2rem' }}>{children}</main>
+        <main className="flex-1 py-6"><div className="container mx-auto px-4" >{children}</div></main>
       </body>
     </html>
   )
