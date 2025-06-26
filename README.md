@@ -258,7 +258,7 @@ export default function RootLayout({
 
 ---
 
-# Tailwind
+# shadcn/ui
 
 ## 🚀 Instalação do Tailwind CSS v4 + CLI + PostCSS
 
@@ -355,6 +355,60 @@ export default function RootLayout({
 ```
 
 9. ** Por fim reinicie o servidor:**
+
+```bash
+npm run dev
+```
+
+---
+
+## ✅ Passo a passo atualizado para o novo `shadcn`
+
+### 1. Rode o comando:
+
+```bash
+npx shadcn@latest init
+```
+
+### 2. Responda às perguntas:
+
+| Pergunta                                 | Sugestão                             |
+| ---------------------------------------- | ------------------------------------ |
+| **Which style**                          | `Default` (ou `New York`, se quiser) |
+| **Where is your global CSS file**        | `src/app/globals.css`                |
+| **Where is your tailwind.config.js**     | `tailwind.config.js`                 |
+| **Where should components be generated** | `components` (padrão)                |
+| **Do you want to use TypeScript?**       | `Yes`                                |
+
+---
+
+### 3. Adicionar um componente (ex: botão)
+
+```bash
+npx shadcn@latest add button
+```
+
+---
+
+### 4. Usar o botão no seu `page.tsx`
+
+```tsx
+import { Button } from '@/components/ui/button'
+
+export default function Home() {
+  return (
+    <section className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <h1 className="text-4xl font-bold">Shadcn funcionando! 🎉</h1>
+      <Button variant="default">Clique aqui</Button>
+      <Button variant="destructive">Deletar</Button>
+    </section>
+  )
+}
+```
+
+---
+
+### 5. Rodar o projeto
 
 ```bash
 npm run dev
