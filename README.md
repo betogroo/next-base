@@ -257,3 +257,107 @@ export default function RootLayout({
 - Clique em **Home** → Volta para `/`
 
 ---
+
+# Tailwind
+
+## 🚀 Instalação do Tailwind CSS v4 + CLI + PostCSS
+
+1. **Instale Tailwind CSS v3 estável:**
+
+```bash
+npm install -D tailwindcss@3.4.1 postcss autoprefixer
+```
+
+2. **Gere os arquivos de config normalmente:**
+
+```bash
+npx tailwindcss init -p
+```
+
+3. **Mantenha o `postcss.config.js` assim:**
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+4. **Mantenha o `tailwind.config.js` assim:**
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+5. **Mantenha o `global.css` assim:**
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+6. **Mantenha o `app/src/page.tsx` assim:**
+
+```tsx
+export default function Home() {
+  return <h1 className="text-5xl font-bold text-blue-500">Home</h1>
+}
+```
+
+7. **Mantenha o `app/src/about/page.tsx` assim:**
+
+```tsx
+export default function About() {
+  return <h1 className="text-5xl font-bold text-green-500">About</h1>
+}
+```
+
+8. **Mantenha o `app/src/layout.tsx` assim:**
+
+```tsx
+import './globals.css'
+import Link from 'next/link'
+
+export const metadata = {
+  title: 'Meu App',
+  description: 'Aprendendo Next.js com React',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="pt-BR">
+      <body>
+        <header className="p-4 bg-blue-600 text-white">
+          <nav className="flex  gap-2">
+            <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
+          </nav>
+        </header>
+        <main className="flex items-center text-white p-4">{children}</main>
+      </body>
+    </html>
+  )
+}
+```
+
+9. ** Por fim reinicie o servidor:**
+
+```bash
+npm run dev
+```
+
+---
