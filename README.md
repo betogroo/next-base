@@ -415,3 +415,58 @@ npm run dev
 ```
 
 ---
+
+## ✅ Nav Bar
+
+| Conceito Vue                   | Equivalente React (JSX)    | Explicação                                         |
+| ------------------------------ | -------------------------- | -------------------------------------------------- |
+| `v-for="item in items"`        | `{items.map(item => (…))}` | Usa `map()` no lugar do `v-for`                    |
+| `:key="item.id"`               | `key={item.id}`            | Mesma função: identificar cada item de forma única |
+| `:href="link"`                 | `href={link}`              | Atribuição dinâmica com `{}`                       |
+| Qualquer JS dentro do template | Envolvido em `{…}`         | JSX exige `{}` para expressões JS/TS               |
+
+> 🧠 JSX é como HTML com superpoderes — tudo que for variável ou código, precisa estar entre `{}`.
+
+---
+
+## 🧩 Dica extra: expressões complexas
+
+Você pode usar **qualquer lógica JS dentro do `map`**, por exemplo:
+
+```tsx
+{
+  pages.map((page, index) => (
+    <Link
+      key={page.href}
+      href={page.href}
+      className={`text-sm hover:text-blue-600 ${
+        index === 0 ? 'text-green-600' : 'text-gray-700'
+      }`}
+    >
+      {page.name}
+    </Link>
+  ))
+}
+```
+
+Isso mostra que JSX aceita **condicionais**, **template strings**, e até **funções**.
+
+---
+
+## 🪄 Extra para ensinar:
+
+Você pode também mostrar:
+
+```tsx
+{
+  pages.length > 0 && (
+    <p className="text-xs text-gray-400">
+      Temos {pages.length} links na navegação.
+    </p>
+  )
+}
+```
+
+Isso reforça que blocos condicionais com `&&` também são comuns no React (sem `v-if`).
+
+---
