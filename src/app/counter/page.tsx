@@ -8,8 +8,8 @@ import { useState } from "react"
 export default function Counter() {
     const [count, setCount] = useState(0)
     const [maxValue] = useState(10)
-    const increaseValue = () => setCount(count +1)
-    const decreaseValue = () => setCount(count -1)
+    const increaseValue = () => setCount(prev => prev+1)
+    const decreaseValue = () => setCount(prev => prev-1)
     
     return (
         <div className="container flex flex-col mx-auto items-center gap-4 py-8">
