@@ -13,6 +13,10 @@ const pages: Page[] = [
     href: '/'
   },
   {
+    name: 'Limitador de Acessos',
+    href: '/counter'
+  },
+  {
     name: 'About',
     href: '/about'
   }
