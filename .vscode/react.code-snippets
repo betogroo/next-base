@@ -1,0 +1,15 @@
+{
+    // REACT BASE
+    "React Page": {
+      "scope": "typescriptreact, js, html",
+      "prefix": "r-page",
+      "body": [
+        "'use client'\n",
+        "export default function ${1:PageName}() {",
+        "\treturn (",
+        "\t\t<div>$2</div>",
+        "\t)",
+        "}",
+      ]
+    },
+}
